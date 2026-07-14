@@ -123,3 +123,50 @@
     text-align:center !important;
   }
 }
+
+/* V7 — dos ajustes móviles aprobados:
+   1) fecha de portada con tono rosa claro y respaldo sutil;
+   2) final con espacio protegido para que todo el texto quede dentro de la foto. */
+@media screen and (max-width:759px){
+  .hero .date{
+    color:#f3b6c1 !important;
+    text-shadow:0 2px 10px rgba(0,0,0,.95),0 0 18px rgba(0,0,0,.75) !important;
+  }
+
+  section.finale{
+    min-height:100svh !important;
+    height:auto !important;
+    overflow:hidden !important;
+    display:flex !important;
+    align-items:flex-end !important;
+    justify-content:center !important;
+  }
+  section.finale > img{
+    position:absolute !important;
+    inset:0 !important;
+    width:100% !important;
+    height:100% !important;
+    object-fit:contain !important;
+    object-position:center 34% !important;
+  }
+  section.finale > .shade{
+    background:linear-gradient(
+      180deg,
+      rgba(9,9,11,.02) 8%,
+      rgba(9,9,11,.12) 38%,
+      rgba(9,9,11,.62) 66%,
+      rgba(9,9,11,.94) 88%,
+      #09090b 100%
+    ) !important;
+  }
+  section.finale > .final-copy{
+    box-sizing:border-box !important;
+    width:100% !important;
+    max-height:58svh !important;
+    overflow-y:auto !important;
+    padding:18px 24px 34px !important;
+    margin:0 !important;
+    scrollbar-width:none;
+  }
+  section.finale > .final-copy::-webkit-scrollbar{display:none}
+}
