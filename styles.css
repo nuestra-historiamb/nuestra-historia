@@ -35,3 +35,14 @@
     background:linear-gradient(180deg,rgba(9,9,11,.08),rgba(9,9,11,.55) 48%,rgba(9,9,11,.97) 82%);
   }
 }
+
+@media screen and (max-width:759px){
+  section.hero > img.hero-img{
+    position:absolute !important;
+    inset:0 !important;
+    width:100% !important;
+    height:100% !important;
+    object-fit:contain !important;
+    object-position:center center !important;
+  }
+}
