@@ -1,0 +1,6 @@
+NUESTRA HISTORIA ❤️
+
+1. Abre index.html para probar la página.
+2. Para publicarla, sube TODA la carpeta manteniendo la carpeta assets.
+3. El audio de Bárbara está en assets/barbara.ogg.
+4. La versión actual usa el audio completo entregado en el chat.
