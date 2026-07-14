@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#09090b">
+  <title>Nuestra Historia ❤️</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="stars" aria-hidden="true"></div>
+
+  <section id="loader" class="screen loader-screen">
+    <div class="terminal">
+      <p id="bootText">Inicializando historia...</p>
+      <div class="bar"><span id="progress"></span></div>
+      <p id="percent">0%</p>
+      <p id="status" class="status">Buscando a Martín...</p>
+    </div>
+  </section>
+
+  <main id="story" class="hidden">
+    <section class="hero panel">
+      <img src="assets/juntos.png" alt="Martín y Bárbara" class="hero-img">
+      <div class="shade"></div>
+      <div class="hero-copy reveal">
+        <p class="eyebrow">15 • 05 • 2026</p>
+        <h1>Nuestra Historia <span>❤️</span></h1>
+        <p>Para mi niña hermosa...</p>
+        <p class="soft">No importa cuántos kilómetros existan entre nosotros. Hay personas que hacen que la distancia deje de sentirse tan grande.</p>
+        <button id="startBtn" class="primary">Comenzar nuestra historia</button>
+      </div>
+    </section>
+
+    <section class="panel chapter reveal">
+      <p class="chapter-no">CAPÍTULO 01</p>
+      <h2>Todo empezó donde menos lo esperaba 🎮</h2>
+      <p>En <strong>Left 4 Dead 2</strong>.</p>
+      <p>Quién diría que entre partidas, zombis y conversaciones iba a encontrar a una persona capaz de cambiar mis días.</p>
+      <p class="accent">Y entonces apareciste tú, amor.</p>
+    </section>
+
+    <section class="panel chapter reveal">
+      <p class="chapter-no">CAPÍTULO 02</p>
+      <h2>Primero fueron tus ojos...</h2>
+      <p>Te vi en tus estados. Tus ojos llamaron mi atención. Después, tu boca.</p>
+      <p>Y sin darme cuenta, ya quería hablar contigo todos los días.</p>
+      <div class="call-card">
+        <span>LLAMADA EN CURSO</span>
+        <strong id="callTimer">00:00:00</strong>
+        <small>Las horas pasan distinto cuando estoy contigo ❤️</small>
+      </div>
+    </section>
+
+    <section class="panel chapter reveal">
+      <p class="chapter-no">CAPÍTULO 03</p>
+      <h2>Mi lugar favorito nunca fue un sitio.</h2>
+      <p>Llamadas de seis, siete, ocho horas. Videollamadas. Películas en Rave. Risas. Silencios. Quedarnos hablando hasta que el sueño gana.</p>
+      <blockquote>Mi lugar favorito siempre fuiste tú.</blockquote>
+    </section>
+
+    <section class="panel memory reveal">
+      <p class="chapter-no">UN RECUERDO QUE GUARDO EN EL CORAZÓN</p>
+      <h2>Hay palabras que uno escucha...</h2>
+      <p>Y hay palabras que recuerda para siempre.</p>
+      <p>Yo todavía recuerdo la primera vez que escuché esto.</p>
+      <button id="heartBtn" class="heart" aria-label="Escuchar el recuerdo">❤️</button>
+      <p class="tap">Toca mi corazón</p>
+      <div id="audioBox" class="audio-box hidden">
+        <div class="pulse">♥</div>
+        <p>Escuchando nuestro recuerdo...</p>
+        <audio id="barbaraAudio" controls preload="metadata">
+          <source src="assets/barbara.ogg" type="audio/ogg">
+        </audio>
+      </div>
+      <div id="afterAudio" class="after-audio hidden">
+        <p>Sí, mi amor... yo lo recuerdo.</p>
+        <p>Recuerdo que era el cumpleaños de tu mamá. Recuerdo que estabas en la cama de tu hermano, que el sueño te ganó y que después despertaste para disculparte.</p>
+        <p>Recuerdo cuánto me dijiste que te gustaba hablar conmigo, cuánto me extrañabas...</p>
+        <h3>Y recuerdo lo hermoso que sonó ese primer “te amo mucho, mucho, mucho”. ❤️</h3>
+      </div>
+    </section>
+
+    <section class="panel photo-panel reveal">
+      <img src="assets/beso.png" alt="Un sueño de Martín y Bárbara juntos">
+      <div class="photo-copy">
+        <h2>Nuestro futuro álbum 📸</h2>
+        <p>Aún no tenemos un álbum lleno de fotos juntos. La distancia todavía nos debe ese abrazo.</p>
+        <p>Así que decidí empezar a imaginar nuestros recuerdos. Espero que un día volvamos a ver estas imágenes y sonriamos porque ya tendremos las verdaderas.</p>
+      </div>
+    </section>
+
+    <section class="panel letter reveal">
+      <p class="chapter-no">PARA TI</p>
+      <h2>Mi niña hermosa...</h2>
+      <div class="letter-paper">
+        <p>Si alguien me hubiera dicho que un videojuego iba a cruzar mi camino con el tuyo, probablemente no lo habría creído.</p>
+        <p>Hoy agradezco cada partida, cada conversación y cada casualidad que me llevó hasta ti.</p>
+        <p>Me encanta hablar contigo durante horas y sentir que todavía nos quedan cosas por decir. Me encanta compartir películas contigo, verte, escucharte y encontrar en tu voz una compañía que ya forma parte de mis días.</p>
+        <p>La distancia existe, amor. No quiero fingir que no. Pero tampoco puede borrar lo que hemos construido. Buenos Aires y Perú pueden verse lejos en un mapa; tú, en cambio, te has vuelto increíblemente cercana a mi corazón.</p>
+        <p>Quiero que el próximo año, si la vida nos lo permite, llegue ese momento que tantas veces imaginamos: poder mirarte sin una pantalla en medio y darte el abrazo que todavía nos debemos.</p>
+        <p>Gracias por estos dos meses. Gracias por tus horas, tus risas, tus silencios y por aquel audio que guardo como uno de mis recuerdos más hermosos.</p>
+        <p><strong>Te amo, mi amor. Te amo, mi niña hermosa.</strong></p>
+        <p class="signature">— Martín ❤️</p>
+      </div>
+    </section>
+
+    <section class="panel distance reveal">
+      <div class="cities">
+        <div><span>🇵🇪</span><strong>Perú</strong></div>
+        <div class="line"><i>❤️</i></div>
+        <div><span>🇦🇷</span><strong>Ranelagh</strong><small>Buenos Aires</small></div>
+      </div>
+      <p>Hoy nos separan kilómetros.</p>
+      <p>Pero siempre encuentro la forma de tenerte cerca: en una llamada, en una película, en una risa, en un “te amo”.</p>
+      <h2>Y algún día... también en un abrazo. ❤️</h2>
+    </section>
+
+    <section class="panel finale reveal">
+      <img src="assets/beso_2.png" alt="Martín y Bárbara">
+      <div class="shade"></div>
+      <div class="final-copy">
+        <p>15 de mayo de 2026</p>
+        <span>↓</span>
+        <p>15 de julio de 2026</p>
+        <h2>2 meses ❤️</h2>
+        <p>Infinitas razones para seguir eligiéndote.</p>
+        <button id="moreBtn" class="secondary">Todavía no termina...</button>
+        <div id="secret" class="secret hidden">
+          <p>Nuestro primer abrazo todavía no existe.</p>
+          <p>Pero cuando llegue ese día...</p>
+          <p>volveremos a este mismo lugar y añadiremos ese recuerdo aquí.</p>
+          <h3>Feliz segundo mes, mi niña hermosa.</h3>
+          <h2>Te amo. ❤️</h2>
+          <p>— Martín</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
