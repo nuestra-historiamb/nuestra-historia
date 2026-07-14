@@ -18,7 +18,11 @@ async function boot(){
 }
 boot();
 
-$("#startBtn").addEventListener("click",()=>document.querySelectorAll(".chapter")[0].scrollIntoView({behavior:"smooth"}));
+const bgMusic=$("#bgMusic"), musicToggle=$("#musicToggle");
+let musicWasPlaying=false;
+function updateMusicButton(){musicToggle.textContent=bgMusic.paused?"♫":"❚❚";musicToggle.classList.toggle("playing",!bgMusic.paused);}
+$("#startBtn").addEventListener("click",async()=>{bgMusic.volume=.32;try{await bgMusic.play();musicToggle.classList.remove("hidden");updateMusicButton();}catch(e){}document.querySelectorAll(".chapter")[0].scrollIntoView({behavior:"smooth"});});
+musicToggle.addEventListener("click",async()=>{if(bgMusic.paused){try{await bgMusic.play()}catch(e){}}else bgMusic.pause();updateMusicButton();});
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add("visible")}),{threshold:.18});
 document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
 
@@ -65,7 +69,12 @@ const audio=$("#barbaraAudio");
 $("#heartBtn").addEventListener("click",async()=>{
   $("#audioBox").classList.remove("hidden");
   $("#audioBox").scrollIntoView({behavior:"smooth",block:"center"});
+  musicWasPlaying=!bgMusic.paused;
+  if(musicWasPlaying){bgMusic.pause();updateMusicButton();}
   try{await audio.play()}catch(e){}
 });
-audio.addEventListener("ended",()=>{setTimeout(()=>{$("#afterAudio").classList.remove("hidden");$("#afterAudio").scrollIntoView({behavior:"smooth",block:"center"})},1800)});
+audio.addEventListener("ended",async()=>{
+  if(musicWasPlaying){try{bgMusic.volume=.20;await bgMusic.play();updateMusicButton();let v=.20;const fade=setInterval(()=>{v=Math.min(.32,v+.01);bgMusic.volume=v;if(v>=.32)clearInterval(fade)},120)}catch(e){}}
+  setTimeout(()=>{$("#afterAudio").classList.remove("hidden");$("#afterAudio").scrollIntoView({behavior:"smooth",block:"center"})},1800)
+});
 $("#moreBtn").addEventListener("click",()=>{$("#secret").classList.remove("hidden");$("#moreBtn").classList.add("hidden");$("#secret").scrollIntoView({behavior:"smooth",block:"center"})});
