@@ -46,3 +46,16 @@
     object-position:center center !important;
   }
 }
+
+/* Ajuste exclusivo para las fotos del futuro/2 meses en móvil:
+   mostrar la imagen completa para conservar beso y brazos del abrazo. */
+@media screen and (max-width:759px){
+  section.photo-panel > img{
+    width:100% !important;
+    height:auto !important;
+    min-height:0 !important;
+    max-height:none !important;
+    object-fit:contain !important;
+    object-position:center center !important;
+  }
+}
