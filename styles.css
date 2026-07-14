@@ -20,3 +20,39 @@
     background:#100c0d;
   }
 }
+
+.future-gallery{width:100%;display:grid;grid-template-columns:1fr;gap:10px;background:#100c0d}
+.future-gallery img{display:block;width:100%;height:auto!important;max-height:none!important;object-fit:contain!important;object-position:center!important}
+@media(min-width:760px){
+  .photo-panel{grid-template-columns:1fr 1fr}
+  .future-gallery{align-self:center}
+  .future-gallery img{max-height:48svh!important}
+}
+
+/* Portada móvil: mostrar la foto completa de Martín y Bárbara, sin recorte lateral. */
+@media(max-width:759px){
+  .hero{
+    min-height:100svh;
+    padding-top:min(72vw,560px);
+    overflow:visible;
+    background:#09090b;
+  }
+  .hero-img{
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:auto;
+    width:100%;
+    height:auto;
+    max-height:72svh;
+    object-fit:contain;
+    object-position:center top;
+  }
+  .hero .shade{
+    background:linear-gradient(180deg,rgba(9,9,11,0) 20%,rgba(9,9,11,.22) 48%,#09090b 72%);
+  }
+  .hero-copy{
+    margin-top:0;
+  }
+}
