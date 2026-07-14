@@ -21,7 +21,18 @@ boot();
 const bgMusic=$("#bgMusic"), musicToggle=$("#musicToggle");
 let musicWasPlaying=false;
 function updateMusicButton(){musicToggle.textContent=bgMusic.paused?"♫":"❚❚";musicToggle.classList.toggle("playing",!bgMusic.paused);}
-$("#startBtn").addEventListener("click",async()=>{bgMusic.volume=.32;try{await bgMusic.play();musicToggle.classList.remove("hidden");updateMusicButton();}catch(e){}document.querySelectorAll(".chapter")[0].scrollIntoView({behavior:"smooth"});});
+$("#startBtn").addEventListener("click",async()=>{
+  bgMusic.volume=.32;
+  musicToggle.classList.remove("hidden");
+  try{
+    if(bgMusic.ended) bgMusic.currentTime=0;
+    await bgMusic.play();
+  }catch(e){
+    console.log("El navegador bloqueó o no pudo iniciar la música:",e);
+  }
+  updateMusicButton();
+  document.querySelectorAll(".chapter")[0].scrollIntoView({behavior:"smooth"});
+});
 musicToggle.addEventListener("click",async()=>{if(bgMusic.paused){try{await bgMusic.play()}catch(e){}}else bgMusic.pause();updateMusicButton();});
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add("visible")}),{threshold:.18});
 document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
@@ -78,3 +89,10 @@ audio.addEventListener("ended",async()=>{
   setTimeout(()=>{$("#afterAudio").classList.remove("hidden");$("#afterAudio").scrollIntoView({behavior:"smooth",block:"center"})},1800)
 });
 $("#moreBtn").addEventListener("click",()=>{$("#secret").classList.remove("hidden");$("#moreBtn").classList.add("hidden");$("#secret").scrollIntoView({behavior:"smooth",block:"center"})});
+const openLetterBtn=$("#openLetterBtn");
+const realLetterText=$("#realLetterText");
+openLetterBtn.addEventListener("click",()=>{
+  realLetterText.classList.remove("hidden");
+  openLetterBtn.classList.add("hidden");
+  setTimeout(()=>realLetterText.scrollIntoView({behavior:"smooth",block:"start"}),120);
+});
