@@ -170,3 +170,58 @@
   }
   section.finale > .final-copy::-webkit-scrollbar{display:none}
 }
+
+/* V8 — final móvil con desplazamiento natural de la página, sin scroll interno. */
+@media screen and (max-width:759px){
+  section.finale{
+    position:relative !important;
+    min-height:100svh !important;
+    height:auto !important;
+    overflow:hidden !important;
+    display:flex !important;
+    align-items:flex-end !important;
+    justify-content:center !important;
+    padding:0 !important;
+    background:#09090b !important;
+  }
+  section.finale > img{
+    position:absolute !important;
+    inset:0 !important;
+    width:100% !important;
+    height:100% !important;
+    max-height:none !important;
+    object-fit:cover !important;
+    object-position:center 28% !important;
+    z-index:0 !important;
+  }
+  section.finale > .shade{
+    position:absolute !important;
+    inset:0 !important;
+    z-index:1 !important;
+    background:linear-gradient(
+      180deg,
+      rgba(9,9,11,.02) 7%,
+      rgba(9,9,11,.12) 34%,
+      rgba(9,9,11,.58) 61%,
+      rgba(9,9,11,.90) 82%,
+      #09090b 100%
+    ) !important;
+  }
+  section.finale > .final-copy{
+    position:relative !important;
+    z-index:2 !important;
+    box-sizing:border-box !important;
+    width:100% !important;
+    max-height:none !important;
+    overflow:visible !important;
+    padding:clamp(330px,52svh,520px) 24px 34px !important;
+    margin:0 !important;
+    text-align:center !important;
+  }
+  section.finale > .final-copy p{
+    line-height:1.55 !important;
+  }
+  section.finale > .final-copy .hidden:not(.hidden){
+    font-size:15px !important;
+  }
+}
